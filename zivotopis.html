@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eva Grűnová – portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: #a87f4e url("pozadi.png") no-repeat center center / cover;
+        color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+      }
+
+      .logo-img {
+        height: 50px;
+      }
+
+      .main-nav {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-nav li a {
+        text-decoration: none;
+        color: #2d2d2d;
+        font-weight: bold;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .bento-box {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 2rem;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #2d2d2d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .bento-box:hover {
+        transform: scale(1.03);
+      }
+
+      .bento-box h2 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 0.5rem;
+      }
+
+      .bento-box p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 1rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+      }
+
+      @media screen and (max-width: 600px) {
+        header {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .main-nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="zivotopis">
+    <header>
+      <a href="index.html">
+        <img
+          src="logo.png"
+          alt="Domovská stránka portfolia UX designérky Evy Grűnové"
+          class="logo-img"
+        />
+      </a>
+
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="o-mne.html">O mně</a></li>
+          <li><a href="co-delam.html">Co dělám</a></li>
+          <li><a href="pripadove-studie.html">Případové studie</a></li>
+          <li><a href="zivotopis.html">Životopis</a></li>
+          <li><a href="socialni-site.html">Sociální sítě</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <iframe
+        style="border: 1px solid rgba(0, 0, 0, 0.1)"
+        width="800"
+        height="450"
+        src="https://embed.figma.com/proto/3D2n9SxkZxFuczGwlmpyeI/cv-eva-grunova?node-id=1-8&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+        allowfullscreen
+      ></iframe>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Evee Grűn.</p>
+    </footer>
+  </body>
+</html>

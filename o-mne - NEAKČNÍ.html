@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Kódování dokumentu UTF‑8 pro diakritiku -->
+    <title>Eva Grűnová – portfolio</title>
+    <!-- Titulek záložky/prohlížeče -->
+    <meta name="viewport" content="width=device-width, initial‑scale=1.0" />
+    <!-- Responsivní zobrazení -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Načtení fontů Open Sans a Playfair Display -->
+    <a href="index.html">
+      <img
+        src="logo.png"
+        alt="Domovská stránka portfolia UX designérky Evy Grűnové"
+        class="logo-img"
+      />
+      <!-- Logo s odkazem na domů -->
+    </a>
+    <style>
+      * {
+        box-sizing: border-box;
+      } /* Reset box-sizing = padding/border zahrnut do width/height */
+
+      body {
+        height: 100%; /* Výška těla = výška viewportu */
+        margin: 0; /* Odstraní defaultní okraje */
+        font-family: "Open Sans", sans-serif; /* Hlavní font */
+        background: #a87f4e url("pozadi.png") no-repeat center center / cover; /* Pozadí s obrázkem */
+        color: #2d2d2d; /* Výchozí barva textu */
+        line-height: 1.6; /* Výška řádků pro čitelnost */
+      }
+
+      header {
+        display: flex; /* Flexbox pro rozložení položek */
+        justify-content: space-between; /* Logo vlevo, menu vpravo */
+        align-items: center; /* Vyrovná vertikálně */
+        padding: 0.5rem; /* Vnitřní odsazení */
+        /* ZAPOZNÁMKOVANÝ MARGIN, padding: 0.5rem 2rem; /* Vnitřní odsazení */
+        /* background-color: transparent; /* Poloprůhledné pozadí */
+        /*  backdrop-filter: blur(8px); /* Rozostření pozadí pod headerem */
+      }
+
+      .logo-img {
+        height: 200px; /* Výška loga – můžeš změnit na 120px pro menší variantu */
+        max-height: 200px; /* Zabraní přetečení loga přes hlavičku */
+        margin: 0;
+        margin-top: 0px; /* Přidá 6 px mezery nad logem – uprav podle potřeby */
+        display: block; /* Blokový element – lépe se s ním manipuluje, odstraní mezery pod obrazkem */
+      }
+      .main-nav {
+        list-style: none; /* Odebere výchozí kulaté odrážky */
+        display: flex; /* Vodorovné rozložení menu */
+        gap: 1.5rem; /* Rozestupy mezi položkami */
+        margin: 0; /* Reset výchozích okrajů */
+        padding: 0; /* Reset výchozích paddingů */
+      }
+
+      .main-nav a {
+        text-decoration: none; /* Bez podtržení */
+        color: #2d2d2d; /* Barva odkazů */
+        font-weight: bold; /* Tučné písmo pro důraz */
+      }
+      .main-nav a:hover {
+        /* DODĚLÁVKA - PODTRŽENÍ ODKAZU V NAVI*/
+        color: #a87f4e; /* Změna barvy při najetí myší */
+        text-decoration: underline; /* Podtržení při hoveru */
+      } /* DODĚLÁVKA - PODTRŽENÍ ODKAZU V NAVI */
+      .about-me-section {
+        padding: 4rem 2rem; /* Odsazení sekce */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.85
+        ); /* Světlé poloprůhledné pozadí */
+        backdrop-filter: blur(10px); /* Jemný efekt rozostření */
+        border-radius: 20px; /* Zaoblení rohů */
+        margin: 3rem auto; /* Vzdálenost od ostatního obsahu, centrovaný blok */
+        max-width: 800px; /* Maximální šířka textu */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Jemný stín pod sekcí */
+      }
+
+      .about-me-section h1 {
+        font-family: "Playfair Display", serif; /* Stylové serifové písmo */
+        font-size: 2.2rem; /* Hlavní nadpis */
+        margin-bottom: 0.5rem; /* Spodní mezera */
+        text-align: center; /* Centrovaný text */
+      }
+
+      .about-me-section h2 {
+        font-size: 1.3rem; /* Podnadpis */
+        font-weight: 400; /* Normální řez písma */
+        text-align: center; /* Centrovaný text */
+        margin-bottom: 2rem; /* Větší mezera pod nadpisem */
+        color: #555; /* Světlejší šedá pro doplňkový text */
+      }
+
+      .about-me-section p {
+        font-size: 1.1rem; /* Čitelnější velikost písma */
+        line-height: 1.8; /* Větší řádkování pro čitelnost */
+        text-align: center; /* Centrovaný text */
+        padding: 0 1rem; /* Vnitřní odsazení vodorovně */
+      }
+
+      footer {
+        text-align: center; /* Centrovaný text */
+        padding: 2rem; /* Vnitřní odsazení patičky */
+        font-size: 0.9rem; /* Mírně menší písmo */
+        color: #fff; /* Bílá barva textu */
+      }
+
+      @media screen and (max-width: 600px) {
+        .about-me-section {
+          padding: 3rem 1rem;
+        } /* Menší obrazovky = méně padding */
+        .about-me-section h1 {
+          font-size: 2rem;
+        } /* Menší nadpis */
+        .about-me-section h2 {
+          font-size: 1.2rem;
+        } /* Menší podnadpis */
+        .about-me-section p {
+          font-size: 1rem;
+        } /* Menší text */
+        .main-nav {
+          flex-direction: column; /* Menu pod sebou */
+          gap: 0.5rem; /* Menší mezery */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header></header>
+    <main>
+      <section id="about-me" class="about-me-section">
+        <div class="container">
+          <h2>Eva Grűn - UX/UI trainee designérka</h2>
+          <!-- Jméno v hlavním nadpisu -->
+          <!-- Popis pozice -->
+          <p>
+            Zaměřuji se na elegantní a funkční řešení.<br />
+            Vycházím z empatie a smysluplnosti.<br />
+            Moje práce spojuje klid, krásu a účel.<br />
+            K UX mě přivedl můj muž. Výjimečně měl pravdu. 😉 <br />
+            Miluji organizovat, tvořit a hledat krásu ve funkci.
+          </p>
+          <!-- Osobní představení -->
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Eva Grűnová.</p>
+      <!-- Copyright -->
+      <!-- Vytvořeno s láskou a s AI kámoškama Perplexity a hlavně díky Chat GPT. -->
+    </footer>
+  </body>
+</html>

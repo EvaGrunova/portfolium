@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eva Grűnová – portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: #e8dccd url("pozadi.png") no-repeat center center / cover;
+        color: #2d2d2d;
+        line-height: 1.6;
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="fullpage">
+      <header class="header-bar">
+        <div class="logo-welcome">
+          <a href="index.html">
+            <img
+              src="logo.png"
+              alt="Vítejte na stránce portfolia UX designérky - trainee - Evy Grűnové"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <span
+          class="welcome-text"
+          style="
+            font-family: 'Playfair Display', serif;
+            color: #7a5c3e;
+            font-size: 1.2em;
+            margin-left: 20px;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 1;
+          "
+        >
+          <span
+            style="
+              letter-spacing: 0.08em;
+              font-family: 'Open Sans', sans-serif;
+              color: #f0ece8;
+              font-weight: 500;
+              margin-left: 10px;
+              vertical-align: middle;
+              display: inline-block;
+            "
+          >
+            Vítejte v prostoru, kde emoce nacházejí strukturu.
+          </span>
+        </span>
+      </header>
+
+      <main>
+        <section class="bento-grid">
+          <a href="o-mne.html" class="bento-box highlight animate-on-load">
+            <h2>O mně</h2>
+            <p>
+              Moje cesta <br />
+              a osobní přístup
+            </p>
+          </a>
+
+          <a href="co-delam.html" class="bento-box info animate-on-load">
+            <h2>Co dělám</h2>
+            <p>UX, UI, výzkum,<br />prototypy</p>
+          </a>
+
+          <a
+            href="pripadove-studie.html"
+            class="bento-box image animate-on-load"
+          >
+            <h2>Případová studie</h2>
+            <p>Tréninkové<br />projekty</p>
+          </a>
+
+          <a href="zivotopis.html" class="bento-box cv animate-on-load">
+            <h2>Životopis</h2>
+            <p>Dovednosti, <br />zkušenosti</p>
+          </a>
+
+          <a href="socialni-site.html" class="bento-box cv animate-on-load">
+            <h2>Sociální sítě</h2>
+            <p>Kde všude se <br />můžeme potkat</p>
+          </a>
+          <a href="kontakt.html" class="bento-box contact animate-on-load">
+            <h2>Kontakt</h2>
+            <p>Spojte se <br />se mnou</p>
+          </a>
+        </section>
+      </main>
+      <img src="butterfly-cursor.png" class="butterflyTrail" alt="motýlek" />
+      <footer>
+        <p style="color: #f5eee6">&copy; 2025 Eva Grűnová.</p>
+        <!-- Vytvořeno s láskou a s AI kámoškama Perplexity a hlavně díky Chat GPT. -->
+      </footer>
+    </div>
+    <script>
+      const butterflies = Array.from(
+        document.querySelectorAll(".butterflyTrail")
+      );
+      let mouseX = 0,
+        mouseY = 0;
+      let coords = butterflies.map(() => ({ x: 0, y: 0 }));
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function animate() {
+        coords[0].x += (mouseX - coords[0].x) * 0.1;
+        coords[0].y += (mouseY - coords[0].y) * 0.1;
+        butterflies[0].style.left = `${coords[0].x}px`;
+        butterflies[0].style.top = `${coords[0].y}px`;
+
+        for (let i = 1; i < butterflies.length; i++) {
+          coords[i].x += (coords[i - 1].x - coords[i].x) * 0.1;
+          coords[i].y += (coords[i - 1].y - coords[i].y) * 0.1;
+          butterflies[i].style.left = `${coords[i].x}px`;
+          butterflies[i].style.top = `${coords[i].y}px`;
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    </script>
+  </body>
+</html>

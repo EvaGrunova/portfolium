@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!-- Deklarace typu dokumentu (HTML5) -->
+<html lang="cs">
+  <!-- Začátek HTML dokumentu, jazyk čeština -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Kódování znaků UTF-8 – podporuje diakritiku -->
+    <title>Kontaktujte mě</title>
+    <!-- Titulek stránky v záložce prohlížeče -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Responsivita pro mobily -->
+
+    <!-- Načtení fontů z Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Odkaz na externí CSS (můžeš přepsat nebo spojit se <style>) -->
+    <link rel="stylesheet" href="style-kontakt.css" />
+
+    <style>
+      /* === Základní styl pro celé tělo stránky === */
+      body {
+        display: flex; /* Flexbox rozvržení */
+        justify-content: center; /* Zarovnání obsahu horizontálně na střed */
+        align-items: center; /* Zarovnání obsahu vertikálně na střed */
+        min-height: 100vh; /* Minimální výška celého okna */
+        font-family: "Open Sans", sans-serif; /* Hlavní font textu */
+        background: url("pozadi.png") no-repeat; /* Pozadí – obrázek */
+        color: #2d2d2d; /* Barva textu */
+        flex-direction: column; /* Všechny děti se řadí pod sebe */
+      }
+
+      header {
+        display: flex; /* Flexbox pro zarovnání loga a navigace */
+        justify-content: space-between; /* Logo vlevo, navigace vpravo */
+        align-items: center; /* Vycentrování prvků vertikálně */
+        padding: 1rem 2rem; /* Vnitřní odsazení hlavičky */
+      }
+
+      .logo-img {
+        height: 64px; /* Výška loga */
+      }
+
+      nav ul {
+        list-style: none; /* Skrytí odrážek u <ul> */
+        display: flex; /* Položky menu do řádku */
+        gap: 1.5rem; /* Mezera mezi položkami */
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        font-weight: 600; /* Tučné písmo pro odkazy */
+        color: #2d2d2d;
+        text-decoration: none; /* Bez podtržení */
+        letter-spacing: 0.03em; /* Mezera mezi písmeny */
+        transition: color 0.3s ease; /* Plynulá změna barvy při hoveru */
+      }
+
+      nav ul li a:hover {
+        color: #aa8866; /* Barva odkazu po najetí */
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1; /* Zabere zbytek prostoru */
+        padding: 2rem;
+      }
+
+      .login-box {
+        background: rgba(255, 255, 255, 0.15); /* Poloprůhledné bílé pozadí */
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 12px 24px rgba(22, 22, 22, 0.1); /* Jemný stín */
+        width: 100%;
+        max-width: 360px; /* Maximální šířka formuláře */
+      }
+
+      .login-box h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #332105;
+      }
+
+      .input-box {
+        margin-bottom: 1rem;
+      }
+
+      .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 40px;
+        font-size: 16px;
+        color: #fff;
+        padding: 20px 45px 20px 20px;
+      }
+
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #ffffff;
+        border: 1px solid #aa8866;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        color: #332105;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #f3ece6;
+      }
+
+      .register-link {
+        text-align: center;
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #888;
+        padding: 1rem;
+      }
+
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 0.5rem;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="kontakt">
+    <!-- === Hlavička stránky === -->
+    <header>
+      <a href="index.html">
+        <img
+          src="logo.png"
+          alt="Domovská stránka portfolia UX designérky Evy Grűnové"
+          class="logo-img"
+        />
+      </a>
+      <nav>
+        <ul>
+          <!-- Navigace -->
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="o-mne.html">O mně</a></li>
+          <li><a href="co-delam.html">Co dělám</a></li>
+          <li><a href="pripadove-studie.html">Případové studie</a></li>
+          <li><a href="budoucnost.html">Budoucnost</a></li>
+          <li><a href="zivotopis.html">Životopis</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- === Hlavní obsah stránky === -->
+    <div class="wrapper">
+      <div class="login-box">
+        <h1>Zanechte mi kontakt a já se Vám ozvu</h1>
+        <form action="#">
+          <!-- E-mail -->
+          <div
+            class="input-box"
+            style="width: 100%; max-width: 260px; margin: 0 auto 1rem auto"
+          >
+            <input
+              type="email"
+              placeholder="E-mail"
+              name="email"
+              style="box-sizing: border-box; width: 100%"
+            />
+          </div>
+
+          <!-- Telefon -->
+          <div
+            class="input-box"
+            style="width: 100%; max-width: 260px; margin: 0 auto 1rem auto"
+          >
+            <input
+              type="tel"
+              placeholder="Telefonní číslo"
+              name="telefon"
+              style="box-sizing: border-box; width: 100%"
+            />
+          </div>
+
+          <!-- Tlačítko Odeslat -->
+          <button
+            type="submit"
+            class="btn"
+            onclick="return validateForm()"
+            style="
+              display: block;
+              margin: 0 auto;
+              width: auto;
+              min-width: 140px;
+              padding: 0.75rem 1.5rem;
+              text-align: center;
+            "
+          >
+            Odeslat kontakt
+          </button>
+
+          <!-- Text pod tlačítkem -->
+          <div class="register-link">
+            <p>
+              Těším se na naši případnou spolupráci nebo nezávaznou konzultaci.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- === JavaScript pro validaci formuláře === -->
+    <script>
+      function validateForm() {
+        const email = document
+          .querySelector('input[name="email"]')
+          .value.trim();
+        const telefon = document
+          .querySelector('input[name="telefon"]')
+          .value.trim();
+
+        if (!email && !telefon) {
+          alert("Zadejte alespoň e-mail nebo telefonní číslo.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+
+    <!-- === Patička === -->
+    <footer>
+      <p style="color: #fff; font-weight: bold; text-align: right; margin: 0">
+        &copy; 2025 Eva Grűnová.
+      </p>
+    </footer>
+  </body>
+</html>

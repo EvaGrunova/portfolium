@@ -1,0 +1,449 @@
+/* === Reset a základní nastavení === *op
+  - Nastaví všem elementům nulové okraje (margin) a vnitřní odsazení (padding).
+  - box-sizing: border-box zajistí, že šířka a výška elementu zahrnuje i padding a border, což usnadňuje práci s rozměry.
+  - Používá se jako základní reset stylů pro konzistentní vzhled napříč prohlížeči.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  flex: 1; /* Zabírá veškerý dostupný prostor mezi hlavičkou a patičkou */
+  display: flex; /* Flexbox pro centrování obsahu */
+  align-items: center; /* Vertikální centrování obsahu */
+  justify-content: center; /* Horizontální centrování obsahu */
+  padding: 1rem; /* Vnitřní odsazení */
+  overflow: hidden; /* Skryje přetékající obsah */
+}
+/* 
+  #oliveTrail:
+  - position: fixed;          Fixuje prvek na pozici v okně prohlížeče.
+  - width: 32px;             Šířka prvku (např. obrázku).
+  - height: auto;            Výška se přizpůsobí obsahu.
+  - pointer-events: none;    Zabrání interakci s tímto prvkem (např. kliknutí).
+  - z-index: 9999;           Zajišťuje, že prvek bude nad ostatními prvky.
+  - transform: translate(-50%, -50%); Vycentruje prvek podle jeho středu.
+*/
+.butterflyTrail {
+  position: fixed;
+  width: 32px;
+  height: auto;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+}
+
+/* === Hlavička === */
+/* 
+  Hlavička stránky (header):
+  - height: 100px;           Nastaví pevnou výšku hlavičky.
+  - display: flex;           Použije flexbox pro rozložení obsahu v hlavičce.
+  - justify-content: space-between;  Rozprostře obsah (např. logo vlevo, menu vpravo).
+  - align-items: center;     Vertikálně vycentruje položky v hlavičce.
+  - padding: 0 2rem;         Vodorovné vnitřní odsazení po stranách.
+  - margin-bottom: 1rem;     Oddělí hlavičku od zbytku stránky.
+*/
+header {
+  height: 100px; /* Výška hlavičky */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 
+  header img:
+  - Nastaví výšku obrázku loga v hlavičce na 48px.
+  - display: block odstraní případné mezery pod obrázkem (inline mezery).
+  - Používá se pro zarovnání a správné zobrazení loga v hlavičce.
+*/
+header img {
+  height: 60px; /* Logo velikost */
+  display: block;
+}
+/* 
+  .logo-img:
+  - height: 180px;           Nastaví výšku obrázku loga (větší logo).
+  - max-height: 120px;       Zajistí, že logo nepřesáhne výšku hlavičky (ochrana proti přetečení).
+  - display: block;          Odstraní mezery pod obrázkem (zarovnání s ostatními blokovými prvky).
+  - Používá se pro speciální obrázkové logo v hlavičce, pokud není použito typografické logo.
+*/
+.logo-img {
+  height: 100px; /* Výška loga – můžeš změnit na 120px pro menší variantu */
+  max-height: 100px; /* Zabraní přetečení loga přes hlavičku */
+  margin-top: 40px; /* Přidá 16 px mezery nad logem – uprav podle potřeby */
+  display: block; /* Blokový element – lépe se s ním manipuluje, odstraní mezery pod obrazkem */
+}
+
+.main-nav {
+  list-style: none; /* Skryje puntíky u <ul> */
+  display: flex; /* Rozložení položek menu do řady */
+  gap: 1.5rem; /* Rovnoměrný odstup mezi odkazy v menu */
+}
+
+.main-nav li a {
+  font-weight: 600; /* Ztučněný text pro lépe čitelné odkazy */
+  transition: color 0.3s ease; /* Hladký přechod barvy při hoveru */
+}
+
+.main-nav li a:hover {
+  color: #aa8866; /* Při najetí – teplá zemitá barva #aa8866 */
+}
+
+/* === Logo – typografické === */
+/* Logo obrázek – základní styl pro zarovnání a velikost */
+.logo {
+  display: block; /* Blokový prvek pro snadné zarovnání */
+  margin: 0 auto; /* Vycentrování loga na střed */
+  max-height: 200px; /* Omezí maximální výšku loga, aby nepřeteklo hlavičku */
+}
+
+/* === Nadpisy === */
+/* 
+  Nadpisy (h1, h2, h3) a odstavce (p):
+  - Nastaví základní font pro všechny hlavní textové elementy.
+  - font-family: "Open Sans", sans-serif;  Používá bezpatkové písmo pro moderní vzhled.
+  - color: #332105;                        Nastaví tmavou barvu textu pro dobrou čitelnost.
+  - letter-spacing: 0.08em;                Mírné rozestupy mezi písmeny pro lepší čitelnost.
+  - Tento blok platí pro všechny nadpisy a odstavce, lze rozšířit i na další textové elementy (např. span, li, a).
+*/
+h1,
+h2,
+h3,
+p {
+  font-family: "Open Sans", sans-serif; /* ✔️ BEZ PATKY */
+  color: #332105;
+  letter-spacing: 0.08em;
+}
+
+body.kontakt .main-nav li:nth-child(6) a {
+  color: #9a593d; /* moje vlastní barva pro aktivní odkaz */
+  font-weight: 700; /* Tučné písmo pro zvýraznění aktivní položky */
+}
+body.socialni-site .main-nav li:nth-child(5) a {
+  color: #9a593d; /* moje vlastní barva pro aktivní odkaz */
+  font-weight: 700; /* Tučné písmo pro zvýraznění aktivní položky */
+}
+
+body.zivotopis .main-nav li:nth-child(4) a {
+  color: #9a593d; /* moje vlastní barva pro aktivní odkaz */
+  font-weight: 700; /* Tučné písmo pro zvýraznění aktivní položky */
+}
+/* zvýraznění aktivní položky menu podle stránky */
+body.pripadove-studie .main-nav li:nth-child(3) a {
+  color: #9a593d; /* moje vlastní barva pro aktivní odkaz */
+  font-weight: 700; /* Tučné písmo pro zvýraznění aktivní položky */
+}
+body.co-delam .main-nav li:nth-child(2) a {
+  color: #9a593d; /* moje vlastní barva pro aktivní odkaz */
+  font-weight: 700; /* Tučné písmo pro zvýraznění aktivní položky */
+}
+body.O-mne .main-nav li:nth-child(1) a {
+  color: #9a593d; /* moje vlastní barva pro aktivní odkaz */
+  font-weight: 700; /* Tučné písmo pro zvýraznění aktivní položky */
+}
+
+/* === Obrázky === */
+/*
+  img:
+  - max-width: 100%;   Zajistí, že obrázek nikdy nepřesáhne šířku svého rodiče (je responzivní).
+  - height: auto;      Výška obrázku se automaticky přizpůsobí šířce, zachová se poměr stran.
+  - border-radius: 0.5rem;  Zaoblí rohy obrázku pro jemnější vzhled.
+  - Tento blok je vhodný pro všechny obrázky na stránce, aby byly responzivní a vizuálně sladěné.
+  - Pokud nechcete zaoblené rohy u všech obrázků, můžete border-radius odebrat nebo použít selektor jen pro konkrétní třídu.
+*/
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* === Odkazy === */
+/*
+  a:
+  - color: inherit;           Odkaz převezme barvu textu svého rodiče (nebude mít výchozí modrou).
+  - text-decoration: none;    Odstraní podtržení odkazu.
+  - Toto nastavení sjednocuje vzhled odkazů s okolním textem, což je vhodné pro moderní design.
+  - Pokud chcete zvýraznit odkazy, doporučuje se použít :hover efekt nebo třídu.
+*/
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* === Struktura stránky === */
+/* === Struktura celé stránky === */
+/*
+  .fullpage:
+  - min-height: 100vh;        Zajistí, že stránka zabírá minimálně celou výšku okna (včetně případného obsahu navíc).
+  - display: flex;            Flexbox pro rozložení hlavičky, hlavního obsahu a patičky pod sebou.
+  - flex-direction: column;   Rozkládá děti (header, main, footer) ve sloupci.
+  - position: relative;       Umožňuje vrstvení (např. pro překryvy).
+  - z-index: 1;               Zajišťuje, že obsah je nad případným pozadím nebo závojem.
+*/
+.fullpage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* === Bento Grid === */
+/*
+  .bento-grid:
+  - display: grid;                   Používá CSS Grid pro rozložení bento-boxů.
+  - grid-template-columns: repeat(3, 1fr);  Tři stejně široké sloupce.
+  - gap: 2.5rem;                     Větší mezery mezi boxy.
+  - justify-content: center;         Centrované zarovnání gridu v rámci rodiče.
+  - align-items: stretch;            Boxy se roztáhnou na výšku řádku (výchozí hodnota).
+  - max-width: 1200px;               Omezí maximální šířku gridu.
+  - margin: 0 auto;                  Vycentruje grid na střed stránky.
+  - background-size, background-position, background-repeat:  Tyto vlastnosti jsou zde zbytečné, pokud grid nemá vlastní pozadí.
+*/
+.bento-grid {
+  display: grid; /* Používá CSS Grid pro rozložení boxů */
+  grid-template-columns: repeat(3, 1fr); /* 3 stejně široké sloupce */
+  gap: 2.5rem; /* Mezery mezi boxy */
+  max-width: 1200px; /* Maximální šířka gridu */
+  margin: 0 auto; /* Vycentrování gridu na střed stránky */
+  /* justify-content: center; odstraněno – není potřeba, protože margin: 0 auto grid zarovná */
+}
+
+.bento-box {
+  width: 320px; /* Pevná šířka – jednotný vzhled bez překvapení */
+  padding: 20px 45px 20px 20px; /* Vnitřní odsazení – prostor mezi obsahem a okrajem */
+  background: rgba(255, 255, 255, 0.15);
+  color: #eee; /* Světle šedý text – jemný kontrast */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Světle šedý okraj – jemné ohraničení */
+  border-radius: 40px; /* Zaoblené rohy – vizuálně přívětivé */
+  box-shadow: 0 12px 24px rgba(41, 28, 1, 0.1); /* Jemný stín – prostorový efekt */
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+  transition: box-shadow 0.3s, transform 0.3s; /* Hladké přepínání stínu a posunu při hoveru */
+  /* text-align: left; */ /* Zakomentováno – výchozí je zarovnání vlevo, takže to není potřeba */
+}
+
+/* Zvýraznění bento-boxu při hoveru – posune box nahoru a zvýrazní stín */
+.bento-box:hover {
+  transform: translateY(
+    -6px
+  ); /* Posune box o 6px nahoru pro efekt "zvednutí" */
+  box-shadow: 0 12px 24px rgba(41, 28, 1, 0.2); /* Zvětší stín pro větší kontrast při hoveru */
+}
+/* POZNÁMKA:
+   - Tento blok je potřebný pouze jednou v celém souboru.
+   - Pokud je v CSS vícekrát, stačí ponechat pouze jeden výskyt.
+   - Řádky jsou stručně okomentované pro rychlou orientaci.
+*/
+
+/* === Animace bento-boxů === */
+.bento-box {
+  opacity: 0; /* Bento-box je na začátku neviditelný */
+  transform: translateY(20px); /* Posune box dolů pro efekt vynoření */
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* Spustí animaci vynoření s plynulým průběhem */
+  will-change: transform, opacity; /* Optimalizace pro lepší výkon animace */
+}
+
+/* Postupné zpoždění animace pro každý box – efekt "kaskády" */
+.bento-box:nth-child(1) {
+  animation-delay: 0.1s;
+} /* První box – malé zpoždění */
+.bento-box:nth-child(2) {
+  animation-delay: 0.2s;
+} /* Druhý box – větší zpoždění */
+.bento-box:nth-child(3) {
+  animation-delay: 0.3s;
+} /* Třetí box */
+.bento-box:nth-child(4) {
+  animation-delay: 0.4s;
+} /* Čtvrtý box */
+.bento-box:nth-child(5) {
+  animation-delay: 0.5s;
+} /* Pátý box */
+.bento-box:nth-child(6) {
+  animation-delay: 0.6s;
+} /* Šestý box */
+
+/* POZNÁMKA:
+   - Všechny řádky jsou potřebné pro animaci a kaskádový efekt.
+   - Nepoužité nebo duplicitní vlastnosti zde nejsou.
+   - Pokud budeš mít méně než 6 boxů, můžeš některé nth-child odstranit.
+*/
+/* === Animace bento-boxů === */
+/* 
+  @keyframes fadeInUp:
+  - Definuje klíčové snímky pro animaci vynoření boxu směrem nahoru.
+  - Používá se pro animaci bento-boxů při načtení stránky.
+*/
+@keyframes fadeInUp {
+  to {
+    /* Konečný stav animace */
+    opacity: 1; /* Box bude plně viditelný */
+    transform: translateY(0); /* Box se vrátí na původní pozici (nahoru) */
+  }
+}
+
+.bento-box h2 {
+  margin-bottom: 0.75rem; /* Odsazení pod nadpisem pro vzdušnost obsahu boxu */
+  font-size: 1.5rem; /* Velikost písma nadpisu v bento-boxu */
+  font-family: "Open Sans", sans-serif; /* Bezpatkové písmo pro moderní vzhled (stejné jako zbytek stránky) */
+  font-weight: 700; /* Tučné písmo pro zvýraznění nadpisu */
+}
+/* POZNÁMKA:
+   - Všechny vlastnosti jsou relevantní pro stylování nadpisu v bento-boxu.
+   - Řádek s komentářem "✅ BEZ patky!" byl nahrazen popisem, protože font-family je již vysvětlen výše.
+   - Nepřidávám žádné zbytečné nebo duplicitní vlastnosti.
+*/
+
+.bento-box p {
+  font-size: 1.05rem; /* Velikost písma v odstavci bento-boxu – mírně větší pro lepší čitelnost */
+  line-height: 1.5; /* Výška řádku – zajišťuje vzdušnost a snadné čtení textu */
+  color: #371d04; /* Barva textu – tmavě šedá pro jemnější kontrast než čistě černá */
+}
+/* POZNÁMKA:
+   - Všechny tři vlastnosti jsou relevantní pro stylování textu v bento-boxu.
+   - Nepřidávám žádné zbytečné nebo duplicitní vlastnosti.
+   - Každý řádek je okomentovaný pro rychlou orientaci.
+*/
+
+/* === Patička === */
+footer {
+  height: 80px; /* Výška patičky – určuje kolik místa zabírá na výšku */
+  display: flex; /* Používá Flexbox – umožňuje zarovnávání obsahu uvnitř */
+  align-items: center; /* Svislé zarovnání obsahu do středu patičky */
+  justify-content: center; /* Vodorovné zarovnání obsahu doprostřed */
+  text-align: center; /* Zarovnání textu uvnitř do středu – pro vícerořádkový text */
+  font-size: 0.9rem; /* Mírně menší písmo než běžné – decentní vzhled */
+  color: #888; /* Světle šedá barva textu – méně dominantní, elegantní */
+  background: transparent; /* Průhledné pozadí – bude prosvítat barva podkladu */
+  padding: 1rem; /* Vnitřní odsazení – dává obsahu prostor zevnitř */
+}
+
+/* === Responzivita === */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Na obrazovkách do 900px – 2 sloupce v gridu */
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column; /* Navigace se řadí svisle pod sebe (ze sloupců) */
+    gap: 0.5rem; /* Vzdálenost mezi jednotlivými položkami menu */
+  }
+
+  .main-nav li a {
+    font-weight: 600; /* Ztučnění textu odkazu – lepší čitelnost na menších zařízeních */
+    letter-spacing: 0.03em; /* Jemné rozestupy mezi písmeny – optická vzdušnost */
+  }
+
+  header {
+    flex-direction: column; /* Hlavička se přepne ze řádku do sloupce */
+    align-items: flex-start; /* Zarovnání prvků v hlavičce doleva */
+    gap: 1rem; /* Mezera mezi jednotlivými prvky v hlavičce */
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr; /* Na obrazovkách do 600px – pouze 1 sloupec v gridu */
+  }
+}
+
+.fullpage {
+  min-height: 100vh; /* Výška stránky alespoň 100 % výšky obrazovky – zabírá celý viewport */
+  display: flex; /* Flexbox – umožňuje rozvržení obsahu ve sloupcích nebo řádcích */
+  flex-direction: column; /* Prvky uvnitř se řadí pod sebe (shora dolů) */
+  position: relative; /* Umožňuje absolutní pozicování potomků vůči této sekci */
+  z-index: 1; /* 🔝 Vrstva – bude nad ostatními prvky s nižším z-indexem (např. závojem) */
+}
+
+/* === Animace bento-boxů === */
+.bento-box {
+  opacity: 0; /* Startovní průhlednost – skryté na začátku */
+  transform: translateY(
+    20px
+  ); /* Startovní posun dolů – element je o 20px níž */
+  animation: fadeInUp 0.8s ease forwards; /* Spustí animaci „fadeInUp“, trvá 0.8s, plynule a zůstane v cílovém stavu */
+  will-change: transform, opacity; /* Prohlížeč si předem připraví tyto vlastnosti – lepší výkon animace */
+}
+
+.bento-box:hover {
+  transform: translateY(
+    -6px
+  ); /* Při najetí se bento-box lehce zvedne (pocit hloubky/interakce) */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Vržený stín – pro efekt nadzvednutí, 3D dojem */
+}
+
+.bento-box:nth-child(1) {
+  animation-delay: 0.1s; /* První bento-box začne animaci s malým zpožděním */
+}
+.bento-box:nth-child(2) {
+  animation-delay: 0.2s; /* Druhý s větším zpožděním – vzniká efekt „vlnek“ */
+}
+.bento-box:nth-child(3) {
+  animation-delay: 0.3s; /* Třetí ještě později – animace postupně */
+}
+.bento-box:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.bento-box:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.bento-box:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1; /* Konečný stav – plně viditelné */
+    transform: translateY(
+      0
+    ); /* Konečný stav – zpět na původní pozici bez posunu */
+  }
+}
+/* Styl pro náhled odkazu na LinkedIn */
+.linkedin-preview {
+  display: flex; /* zarovnání vedle sebe */
+  align-items: center; /* vertikální zarovnání */
+  gap: 12px; /* mezera mezi ikonou a textem */
+  padding: 14px 18px; /* vnitřní odsazení */
+  border: 1px solid #e0e0e0; /* jemný rámeček */
+  border-radius: 10px; /* zaoblení rohů */
+  text-decoration: none; /* žádné podtržení */
+  background-color: #ffffff; /* bílé pozadí */
+  max-width: 300px; /* šířka boxu */
+  transition: background 0.3s ease;
+}
+
+.linkedin-preview:hover {
+  background-color: #f9f9f9; /* efekt po najetí */
+}
+
+.linkedin-icon {
+  width: 32px; /* velikost ikonky */
+  height: 32px;
+}
+
+/* Jméno */
+.linkedin-name {
+  margin: 0;
+  font-family: "Playfair Display", serif; /* tvůj elegantní font */
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Role */
+.linkedin-role {
+  margin: 0;
+  font-family: "Inter", sans-serif; /* tvůj sekundární font */
+  font-size: 14px;
+  color: #777;
+}

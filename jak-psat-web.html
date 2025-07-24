@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Eva Grűnová – portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background: #a87f4e url("pozadi.png") no-repeat center center / cover;
+        color: #2d2d2d;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+      }
+
+      .logo-img {
+        height: 50px;
+      }
+
+      .main-nav {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-nav li a {
+        text-decoration: none;
+        color: #2d2d2d;
+        font-weight: bold;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 1rem;
+      }
+
+      .figma-link-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 1400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.9);
+        transition: transform 0.2s ease;
+        text-decoration: none;
+      }
+
+      .figma-link-wrapper:hover {
+        transform: scale(1.01);
+      }
+
+      .figma-link-wrapper iframe {
+        display: block;
+        width: 100%;
+        height: 600px;
+        border: none;
+        pointer-events: none; /* aby celý box byl klikací */
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+      }
+
+      @media screen and (max-width: 768px) {
+        .main-nav {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .figma-link-wrapper iframe {
+          height: 400px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <img
+          src="logo.png"
+          alt="Domovská stránka portfolia UX designérky Evy Grűnové"
+          class="logo-img"
+        />
+      </a>
+
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="o-mne.html">O mně</a></li>
+          <li><a href="co-delam.html">Co dělám</a></li>
+          <li><a href="pripadove-studie.html">Případové studie</a></li>
+          <li><a href="zivotopis.html">Životopis</a></li>
+          <li><a href="socialni-site.html">Sociální sítě</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <a
+        class="figma-link-wrapper"
+        href="https://www.figma.com/proto/TyMVpZ6siWeFOvYWwQIuCK/ux-14.-sk.---Eva-Gr%C5%B1n-%F0%9F%92%9A-%C3%BAkoly?page-id=209%3A9&node-id=288-91&viewport=-2368%2C-74%2C0.45&t=igllmJ56ffEbMf0v-1&scaling=contain&content-scaling=fixed&starting-point-node-id=288%3A91"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Zobrazit celou práci ve Figmě"
+      >
+        <iframe
+          src="https://embed.figma.com/design/TyMVpZ6siWeFOvYWwQIuCK/ux-14.-sk.---Eva-Gr%C5%B1n-%F0%9F%92%9A-%C3%BAkoly?node-id=288-91&embed-host=share"
+          allowfullscreen
+        ></iframe>
+      </a>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Evee Grűn.</p>
+    </footer>
+  </body>
+</html>
