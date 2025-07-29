@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="cs">
   <head>
@@ -8,64 +11,133 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      * {
-        box-sizing: border-box;
+
+ 
+<style>
+     body {
+  margin: 0;
+  min-height: 100vh; /* zajistí výšku přes celou obrazovku */
+  font-family: "Open Sans", sans-serif;
+  background-image: url("pozadi.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed; /* pokud chceš efekt paralaxy (volitelné) */
+  background-size: cover;
       }
 
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        font-family: "Open Sans", sans-serif;
-        background: #a87f4e url("pozadi.png") no-repeat center center / cover;
-        color: #2d2d2d;
-        display: flex;
-        flex-direction: column;
-      }
+  header {
+    padding: 0 1.5rem; /* můžeš upravit, ale ne moc, jinak logo nebude na kraji */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+  }
 
-      header {
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(12px);
-      }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
 
-      .logo-img {
-        height: 50px;
-      }
+  .logo a {
+    display: block;
+  }
 
-      .main-nav {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-        margin: 0;
-        padding: 0;
-      }
+  .logo img {
+    height: 100px;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
 
-      .main-nav li a {
-        text-decoration: none;
-        color: #2d2d2d;
-        font-weight: bold;
-      }
+  .welcome-txt {
+    line-height: 1;
+    font-size: 1.2em;
+    color: #f0ece8;
+    font-weight: 500;
+    margin-left: 30px;
+    display: inline-block;
+    letter-spacing: 0.08em;
+    font-family: 'Open Sans', sans-serif;
+    height: 100px;
+    line-height: 100px;
+  }
 
-      main {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-      }
+  .main-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
 
-      .bento-grid {
+  .main-nav li a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-weight: 600;
+  }
+
+  .main-nav li a:hover {
+    text-decoration: underline;
+  }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.fullpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+footer {
+  margin-top: auto;
+
+  
+    text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="fullpage">
+      <header class="header-bar">
+        <div class="logo"><a href="index.html">
+            <img src="logo.png" alt="Vítejte na stránce portfolia UX designérky - trainee - Evy Grűnové"></a></div>
+    
+           <nav>
+        <ul class="main-nav">
+          <li><a href="index.php">Domů</a></li>
+          <li><a href="o-mne.php">O mně</a></li>
+          <li><a href="co-delam.php">Co dělám</a></li>
+          <li><a href="pripadove-studie.php">Případové studie</a></li>
+          <li><a href="zivotopis.php">Životopis</a></li>
+          <li><a href="socialni-site.php">Sociální sítě</a></li>
+          <li><a href="kontakt.php">Kontakt</a></li>
+        </ul>
+      </nav>
+       
+      </header><style>
+ .bento-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: 1.5rem;
         width: 100%;
         max-width: 1000px;
+        margin:100px auto;
       }
 
       .bento-box {
@@ -94,61 +166,19 @@
         font-size: 1rem;
       }
 
-      footer {
-        text-align: center;
-        padding: 1rem;
-        font-size: 0.9rem;
-        color: #fff;
-      }
-
-      @media screen and (max-width: 600px) {
-        header {
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .main-nav {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-      }
-    </style>
-  </head>
-
-  <body class="Co dělám">
-    <header>
-      <a href="index.html">
-        <img
-          src="logo.png"
-          alt="Domovská stránka portfolia UX designérky Evy Grűnové"
-          class="logo-img"
-        />
-      </a>
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html">Domů</a></li>
-          <li><a href="o-mne.html">O mně</a></li>
-          <li><a href="co-delam.html">Co dělám</a></li>
-          <li><a href="pripadove-studie.html">Případové studie</a></li>
-          <li><a href="zivotopis.html">Životopis</a></li>
-          <li><a href="socialni-site.html">Sociální sítě</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
+</style>
+  <main>
       <section class="bento-grid">
         <a class="bento-box highlight animate-on-load">
           <h2>Pomáhám pojmenovat a navrhnout to, co opravdu potřebujete.</h2>
           <p>
-            Ve své práci propojuji estetiku s funkčností. UX design vnímám jako
+            Ve své práci propojuji estetiku s funkčností. UX design vnímám jako
             citlivé ladění – hledání rovnováhy mezi vizuálním klidem
-            a smysluplným uspořádáním. Plánuji, nebo improvizuji. Staré měním
-            v nové. Složité v jednoduché. Křiklavé usměrňuji, klidné povzbuzuji.
+            a smysluplným uspořádáním. Plánuji, nebo improvizuji. Staré měním
+            v nové. Složité v jednoduché. Křiklavé usměrňuji, klidné povzbuzuji.
             Dáte-li mi chaos – vrátím vám harmonii. Dáte-li mi důvěru – podtrhnu
             Váš potenciál. Tvořím návrhy, které nejsou jen esteticky čisté, ale
-            i intuitivní a přirozené na používání. Zajímám se o motivace
+            i intuitivní a přirozené na používání. Zajímám se o motivace
             uživatelů, testuji, strukturuji, ladím. Ať už redesignuji existující
             rozhraní nebo vytvářím nové, vždy hledám způsob, jak dát
             neviditelnému možnost vyniknout. Protože krása má smysl jen tehdy,
@@ -158,8 +188,13 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Evee Grűn.</p>
-    </footer>
+
+
+      <footer>
+        <p style="color: #f5eee6">&copy; 2025 Eva Grűnová</p>
+       
+      </footer>
+    </div>
+
   </body>
 </html>
