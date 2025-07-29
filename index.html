@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="cs">
   <head>
@@ -8,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <style>
       body {
         height: 100%;
@@ -19,47 +22,35 @@
         line-height: 1.6;
         position: relative;
       }
+      
+      header {background: none !important;display: block !important;}
+      .logo{display:inline-block;width:200px;
+            vertical-align: middle;
+            }
+      .logo img{height:100px;}
+      .welcome-txt{line-height: 1; font-size: 1.2em;
+      float:right;margin-right:20px;height:100px;  line-height: 100px;
+              letter-spacing: 0.08em;
+              font-family: 'Open Sans', sans-serif;
+              color: #f0ece8;
+              font-weight: 500;
+              margin-left: 30px;
+              
+              display: inline-block;}
+      
     </style>
   </head>
 
   <body>
     <div class="fullpage">
       <header class="header-bar">
-        <div class="logo-welcome">
-          <a href="index.html">
-            <img
-              src="logo.png"
-              alt="Vítejte na stránce portfolia UX designérky - trainee - Evy Grűnové"
-              class="logo-img"
-            />
-          </a>
-        </div>
-        <span
-          class="welcome-text"
-          style="
-            font-family: 'Playfair Display', serif;
-            color: #7a5c3e;
-            font-size: 1.2em;
-            margin-left: 20px;
-            vertical-align: middle;
-            display: inline-block;
-            line-height: 1;
-          "
-        >
-          <span
-            style="
-              letter-spacing: 0.08em;
-              font-family: 'Open Sans', sans-serif;
-              color: #f0ece8;
-              font-weight: 500;
-              margin-left: 10px;
-              vertical-align: middle;
-              display: inline-block;
-            "
-          >
+        <div class="logo"><a href="index.html">
+            <img src="logo.png" alt="Vítejte na stránce portfolia UX designérky - trainee - Evy Grűnové"></a></div>
+    
+          <span class="welcome-txt">
             Vítejte v prostoru, kde emoce nacházejí strukturu.
           </span>
-        </span>
+       
       </header>
 
       <main>
