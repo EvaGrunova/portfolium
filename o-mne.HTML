@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="cs">
   <head>
@@ -8,33 +11,165 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <style></style>
+
+ 
+<style>
+     body {
+  margin: 0;
+  min-height: 100vh; /* zajistí výšku přes celou obrazovku */
+  font-family: "Open Sans", sans-serif;
+  background-image: url("pozadi.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed; /* pokud chceš efekt paralaxy (volitelné) */
+  background-size: cover;
+      }
+
+  header {
+    padding: 0 1.5rem; /* můžeš upravit, ale ne moc, jinak logo nebude na kraji */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+  }
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .logo a {
+    display: block;
+  }
+
+  .logo img {
+    height: 100px;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .welcome-txt {
+    line-height: 1;
+    font-size: 1.2em;
+    color: #f0ece8;
+    font-weight: 500;
+    margin-left: 30px;
+    display: inline-block;
+    letter-spacing: 0.08em;
+    font-family: 'Open Sans', sans-serif;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .main-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav li a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-weight: 600;
+  }
+
+  .main-nav li a:hover {
+    text-decoration: underline;
+  }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.fullpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+footer {
+  margin-top: auto;
+
+  
+    text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+      
+    </style>
   </head>
 
-  <body class="O mně">
-    <header>
-      <a href="index.html">
-        <img
-          src="logo.png"
-          alt="Domovská stránka portfolia UX designérky Evy Grűnové"
-          class="logo-img"
-        />
-      </a>
-      <nav>
+  <body>
+    <div class="fullpage">
+      <header class="header-bar">
+        <div class="logo"><a href="index.html">
+            <img src="logo.png" alt="Vítejte na stránce portfolia UX designérky - trainee - Evy Grűnové"></a></div>
+    
+           <nav>
         <ul class="main-nav">
-          <li><a href="index.html">Domů</a></li>
-          <li><a href="o-mne.html">O mně</a></li>
-          <li><a href="co-delam.html">Co dělám</a></li>
-          <li><a href="pripadove-studie.html">Případové studie</a></li>
-          <li><a href="zivotopis.html">Životopis</a></li>
-          <li><a href="socialni-site.html">Sociální sítě</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="index.php">Domů</a></li>
+          <li><a href="o-mne.php">O mně</a></li>
+          <li><a href="co-delam.php">Co dělám</a></li>
+          <li><a href="pripadove-studie.php">Případové studie</a></li>
+          <li><a href="zivotopis.php">Životopis</a></li>
+          <li><a href="socialni-site.php">Sociální sítě</a></li>
+          <li><a href="kontakt.php">Kontakt</a></li>
         </ul>
       </nav>
-    </header>
+       
+      </header><style>
+.bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 1000px;
+        margin: 100px auto;
+      }
 
-    <main>
+      .bento-box {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 2rem;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #2d2d2d;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .bento-box:hover {
+        transform: scale(1.03);
+      }
+
+      .bento-box h2 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 0.5rem;
+      }
+
+      .bento-box p {
+        margin: 0;
+        line-height: 1.5;
+        font-size: 1rem;
+      }
+
+</style>
+
+
+ <main>
       <section class="bento-grid">
         <a class="bento-box highlight animate-on-load">
           <h2>Jsem UX/UI trainee designérka.</h2>
@@ -48,8 +183,12 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2025 Evee Grűn.</p>
-    </footer>
+
+      <footer>
+        <p style="color: #f5eee6">&copy; 2025 Eva Grűnová</p>
+       
+      </footer>
+    </div>
+
   </body>
 </html>
